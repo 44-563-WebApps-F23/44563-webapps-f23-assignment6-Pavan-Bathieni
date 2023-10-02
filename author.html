@@ -17,9 +17,13 @@
         <input type="button" onclick="checkAuthor()" value="Check the guess">
     </form>
     <p id="result">This text will be replaced </p>
+    <div>
+        <img src="Adelaide.jpg" alt="Adelide" id= "imageChangeOnClick" width="100px" height="100px" onclick="selectImage()">
+    </div>
     <script>
         var good = 0;
         var oops = 0;
+        var useImage=1;
         function checkAuthor() {
             hiddenAuth = document.getElementById("form1_hiddenAuth").value
             guessAuth = document.getElementById("form1_guessAuth").value
@@ -32,6 +36,22 @@
                 alert("Sorry");
             }
             document.getElementById("result").innerHTML = "good :" + good + " oops :" + oops;
+        }
+        function selectImage() {
+           switch(useImage){
+              case 1:
+                document.getElementById("imageChangeOnClick").src="Adelaide.jpg";
+                useImage++;
+                break;
+              case 2:
+                document.getElementById("imageChangeOnClick").src="Bombay.jpg";
+                useImage++;
+                break;
+              case 3:
+              document.getElementById("imageChangeOnClick").src="Hyderabad.jpg";
+                useImage=1;
+                break;
+           }
         }
     </script>
 </body>
